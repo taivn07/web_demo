@@ -54,7 +54,7 @@ $(document).on( 'cycle-pre-initialize', function( e, opts ) {
         var w = slide.outerWidth();
         var h = slide.outerHeight();
         if (w) {
-            if (opts.centerHorz && w <= contW)
+            if (opts.centerHorz)
                 slide.css( 'marginLeft', (contW - w) / 2 );
             if (opts.centerVert && h <= contH)
                 slide.css( 'marginTop', (contH - h) / 2 );

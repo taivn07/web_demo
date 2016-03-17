@@ -4,7 +4,7 @@ body { margin: 0; padding: 0; font-family: "Roboto"; font-size: 15px;}
 
 .clear { clear: both;}
 
-.container { width: 640px; margin: 0 auto; padding: 0 10px;}
+.container { width: 100%; margin: 0 auto; padding: 0 10px;}
 
 /* Sprite icons */
 .sprite { display: inline-block; background: url(../img/icons.png) top left no-repeat;}
@@ -27,23 +27,24 @@ body { margin: 0; padding: 0; font-family: "Roboto"; font-size: 15px;}
 .sprite.icon-v { width: 58px; height: 58px; background-position: -68px -120px;}
 
     /* Style header */
-.header { background: #e83e7d; color: #fff; padding: 20px 0 33px; text-align: center; position: fixed; width: 100%; z-index: 999;}
+.header { background: #e83e7d; color: #fff; padding: 20px 0 28px; text-align: center; position: fixed; width: 100%; z-index: 999;}
 .header a { text-decoration: none; color: #fff;}
-.header .header-text { font-size: 40px; font-family: "MS Gothic"; line-height: 44px;}
+.header .header-text { font-size: 40px; line-height: 44px;}
 .header h1 { margin: 0;}
 .header .container { position: relative;}
 .header .main-nav { position: absolute; top: 0; left: 10px;}
 .header .top-search { position: absolute; top: 0; right: 10px;}
 
 /* Style top nav */
-.top-nav { background: #ed6597; padding-top: 97px;}
+.top-nav { background: #ed6597; position: fixed; width: 100%; top: 97px; z-index: 999; visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.5s linear;}
+.top-nav.active { visibility: visible; opacity: 1;}
 .top-nav a { text-decoration: none; color: #fff; font-size: 23px; text-align: center; padding: 15px 0; border-left: 1px solid #e83e7d; float: left; width: 33.33%;}
 .top-nav a:first-child { border-left: none;}
 .top-nav a:hover, .top-nav a.active { background: #b82e61;}
 .top-nav .container { padding: 0;}
 
 /* Style slider */
-.top-slider { height: 331px; margin-bottom: 25px; overflow: hidden; text-align: center;}
+.top-slider { height: 489px; margin-bottom: 25px; overflow: hidden; text-align: center; padding-top: 157px;}
 .top-slider .container { height: 100%; position: relative;}
 .top-slider .slider-pager { position: absolute; width: 100%; text-align: center; bottom: 10px; z-index: 100;}
 .top-slider .slider-pager span { content: ''; background: rgba(217, 192, 179, 0.8); border-radius: 10px; font-size: 0; line-height: 0; padding: 7px; margin: 0 13px;}
@@ -99,7 +100,8 @@ body { margin: 0; padding: 0; font-family: "Roboto"; font-size: 15px;}
 .footer-links a { background: #ef9bbd; font-size: 20px; line-height: 20px; color: #fff; text-decoration: none; text-align: center; display: block; padding: 15px 0;}
 
 .copyright { font-size: 20px; text-align: center; margin: 30px;}
-.goto-top { position: fixed; right: 5px; bottom: 50px; display: none;}
+.goto-top { position: fixed; right: 5px; bottom: 50px; visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.5s linear;}
+.goto-top.active { visibility: visible; opacity: 1;}
 
 /* Star vote */
 .vote-star-wrap { float: left;}

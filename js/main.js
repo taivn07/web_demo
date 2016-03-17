@@ -1,6 +1,9 @@
 /**
  * Created by phongbui on 3/17/16.
  */
+
+// last position, check scroll direction
+var lastScrollTop = 0;
 $(document).ready(function(){
     // trigger event click for vote star
     $('label.star').click(function () {
@@ -14,10 +17,23 @@ $(document).ready(function(){
     $(window).scroll(function(){
         var aTop = $('.ad').height();
         if ($(this).scrollTop()>= 150){
-            $('.goto-top').show();
+            $('.goto-top').removeClass('active');
+            $('.goto-top').addClass('active');
         } else {
-            $('.goto-top').hide();
+            $('.goto-top').removeClass('active');
         }
+
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop){
+            // downscroll: hide top nav
+            $('.top-nav').removeClass('active');
+        } else {
+            // upscroll: show top nav
+            $('.top-nav').removeClass('active');
+            $('.top-nav').addClass('active');
+
+        }
+        lastScrollTop = st;
     });
 
     // trigger class active for like button

@@ -36,13 +36,14 @@ body { margin: 0; padding: 0; font-family: "Roboto"; font-size: 15px;}
 .header .top-search { position: absolute; top: 0; right: 10px;}
 
 /* Style top nav */
-.top-nav { background: #ed6597; position: fixed; width: 100%; z-index: 998; visibility: hidden; transition: visibility 0.3s, transform 0.3s ease, -webkit-transform .5s ease;
+.top-nav { background: #ed6597; position: fixed; width: 100%; z-index: 998; visibility: hidden;
+    -webkit-transition: visibility 0.3s, -webkit-transform .3s ease;
+    transition: visibility 0.3s, transform 0.3s ease, -webkit-transform .3s ease;
     -webkit-transform: translateZ(0);
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
 }
 .top-nav.active { visibility: visible;
-    /*top: 97px;*/
     /* transform for mobile */
     -ms-transform: translate3d(0, 97px, 0);
     -webkit-transform: translate3d(0,97px, 0);
